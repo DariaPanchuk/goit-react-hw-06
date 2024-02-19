@@ -1,8 +1,8 @@
-import { Contact } from "../Contact/Contact";
+import Contact from "../Contact/Contact";
 import { useSelector } from 'react-redux';
 import css from "./ContactList.module.css";
 
-export const ContactList = () => {
+const ContactList = () => {
     const contacts = useSelector(state => state.contacts.items);
     const filter = useSelector(state => state.filter);
     const visibleContacts = contacts.filter(contact =>
@@ -20,3 +20,5 @@ export const ContactList = () => {
         </ul>
     );
 };
+
+export default ContactList;

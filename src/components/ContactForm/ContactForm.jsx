@@ -17,7 +17,7 @@ const validation = Yup.object().shape({
         .required("Required field!"),
 });
 
-export const ContactForm = () => {
+const ContactForm = () => {
     const dispatch = useDispatch();
 
     const nameField = useId();
@@ -41,15 +41,17 @@ export const ContactForm = () => {
                 <div className={css.item}>
                     <label className={css.label} htmlFor={nameField}>Name</label>
                     <Field className={css.input} type="text" name="name" id={nameField} />
-                    <ErrorMessage className={css.error} name="name" component="span"/>
+                    <ErrorMessage className={css.error} name="name" component="span" />
                 </div>
                 <div className={css.item}>
                     <label className={css.label} htmlFor={numberField}>Number</label>
-                    <Field className={css.input} type="text" name="number" id={numberField}/>
-                    <ErrorMessage className={css.error} name="number" component="span"/>
+                    <Field className={css.input} type="text" name="number" id={numberField} />
+                    <ErrorMessage className={css.error} name="number" component="span" />
                 </div>
                 <button className={css.button} type="submit">Add contact</button>
             </Form>
         </Formik>
-    )
-}
+    );
+};
+
+export default ContactForm;
